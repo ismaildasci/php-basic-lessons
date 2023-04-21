@@ -1,2 +1,3 @@
 <?php
-require('about.view.php');
+$heading = "Contact";
+require('views/about.view.php');
