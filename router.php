@@ -9,6 +9,7 @@ function routeToController($uri, $routes)
     } else {
         abort();
     }
+
 }
 
 function abort($code = 404)
