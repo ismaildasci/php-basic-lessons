@@ -1,4 +1,7 @@
 <?php
+
+use Core\Session;
+
 function dd($value)
 {
     echo "<pre>";
@@ -54,4 +57,23 @@ function redirect($path)
     header("Location: {$path}");
 
     exit();
+}
+
+function login($user)
+{
+    $_SESSION['user'] = [
+        'email' => $user['email']
+    ];
+
+    session_regenerate_id(true);
+}
+
+function logout()
+{
+    Session::destroy();
+}
+
+function old($key, $default = '')
+{
+    return Core\Session::get('old')[$key] ?? $default;
 }
