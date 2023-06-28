@@ -8,31 +8,22 @@ $db = App::resolve(Database::class);
 
 $errors = [];
 
-
 if (!Validator::string($_POST['body'], 1, 1000)) {
-
-  $errors['body'] = 'Body is required and must be less than 1000 characters';
+    $errors['body'] = 'Body is required and must be less than 1000 characters';
 }
 
 if (!empty($errors)) {
+    return view('notes/create.view.php', [
+        'heading' => 'Create Note',
 
-  return view("notes/create.view.php", [
-
-    'heading' => 'Create Note',
-
-    'errors' => $errors ?? [],
-
-  ]);
+        'errors' => $errors ?? [],
+    ]);
 }
 
-
-
 $db->query('INSERT INTO notes(body, user_id) VALUES(:body, :user_id)', [
+    'body' => $_POST['body'],
 
-  'body' => $_POST['body'],
-
-  'user_id' => 1,
-
+    'user_id' => 1,
 ]);
 
 header('location: /notes');

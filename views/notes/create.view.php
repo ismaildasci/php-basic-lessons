@@ -1,6 +1,6 @@
-<?php require base_path("views/partials/head.php") ?>
-<?php require base_path("views/partials/nav.php") ?>
-<?php require base_path("views/partials/banner.php") ?>
+<?php require base_path('views/partials/head.php'); ?>
+<?php require base_path('views/partials/nav.php'); ?>
+<?php require base_path('views/partials/banner.php'); ?>
 
 <main>
 
@@ -17,7 +17,7 @@
 
                     <?php if (isset($errors['body'])) : ?>
 
-                        <p class="text-red-500 text-xs mt-2"><?= $errors['body'] ?></p>
+                    <p class="text-red-500 text-xs mt-2"><?= $errors['body'] ?></p>
 
                     <?php endif; ?>
 
@@ -35,4 +35,4 @@
     </div>
 </main>
 
-<?php require base_path('views/partials/footer.php') ?>
+<?php require base_path('views/partials/footer.php'); ?>

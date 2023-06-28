@@ -1,10 +1,5 @@
 <?php
 
-
-view(
-
-  'index.view.php',
-  [
-    'heading' => 'HOME'
-  ]
-);
+view('index.view.php', [
+    'heading' => 'HOME',
+]);

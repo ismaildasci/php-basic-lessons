@@ -2,7 +2,6 @@
 
 use Core\Session;
 
-
 view('session/create.view.php', [
-  'errors' => Session::get('errors')
+    'errors' => Session::get('errors'),
 ]);

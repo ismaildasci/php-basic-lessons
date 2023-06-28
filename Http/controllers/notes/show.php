@@ -10,7 +10,6 @@ $currentUserId = 1;
 $note = $db
 
     ->query('select * from notes where  id = :id', [
-
         'id' => $_GET['id'],
     ])
 
@@ -18,16 +17,12 @@ $note = $db
 
 authorize($note['user_id'] === $currentUserId);
 
-
 if ($note['user_id'] !== $currentUserId) {
-
-
     abort(Response::FORBIDDEN);
 }
 
-view("notes/show.view.php", [
+view('notes/show.view.php', [
+    'heading' => 'Note',
 
-    'heading' => "Note",
-
-    'note' => $note
+    'note' => $note,
 ]);
