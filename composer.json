@@ -1,0 +1,16 @@
+{
+    "name": "dasci/php-basic-lessons",
+   "authors": [
+        {
+            "name": "ismaildasci",
+            "email": "dasci.info@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+           "Core\\": "Core/",
+           "Http\\": "Http/"
+        }
+    }
+}
